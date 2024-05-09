@@ -5,6 +5,7 @@ def smallest(n):
     smallest_single_digi = min([int(n) for n in number_as_str_list])
 
     temp_smallest = n
+    temp_smallest_digi_index = None
 
     for index, digi in enumerate(number_as_str_list):
         if int(digi) == smallest_single_digi:
@@ -13,9 +14,10 @@ def smallest(n):
             new_value_as_int = int("".join(num_copy))
             if new_value_as_int < n:
                 temp_smallest = new_value_as_int
+                temp_smallest_digi_index = index
             num_copy = number_as_str_list
 
-    return temp_smallest
+    return temp_smallest, temp_smallest_digi_index, 0
 
 
-print(smallest(62524))
+print(smallest(209917))
