@@ -16,4 +16,7 @@ def smallest(n):
                 y = j
     return [smallest_num, x, y]
 
+
 print(smallest(209917))
+
+# https://www.codewars.com/kata/573992c724fc289553000e95/python
