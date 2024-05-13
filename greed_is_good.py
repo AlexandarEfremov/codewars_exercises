@@ -10,27 +10,26 @@ def score(dice):
         "5": 50
     }
     total_amount = 0
-    dice_str = sorted(map(str, dice))
+    dice_list = sorted(map(str, dice))
+    dice_str = "".join(dice_list)
 
-    first_triplet = dice_str[:3]
-    second_part = dice_str[3:]
-
-    first_triplet_as_str = "".join(first_triplet)
+    triplet = None
+    second_part = None
 
     for key, value in score_key.items():
-        if first_triplet_as_str == key:
+        if key in dice_str:
+            triplet = key
             total_amount += value
-        else:
-            for el in first_triplet:
-                if el == key:
-                    total_amount += value
+            for i in range(3):
+                dice_list.remove(triplet[0])
+            break
 
     for key, value in score_key.items():
-        for el in second_part:
-            if el == key:
+        for el in dice_list:
+            if key == el:
                 total_amount += value
 
-    return second_part
+    return total_amount
 
 
-print(score([5, 1, 3, 4, 1]))
+print(score([4, 4, 4, 3, 3]))
