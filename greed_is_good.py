@@ -1,2 +1,14 @@
 def score(dice):
-    pass # your code here
+    score_key {
+        "111": 1000,
+        "666": 600,
+        "555": 500,
+        "444": 400,
+        "333": 300,
+        "222": 200,
+        "1": 100,
+        "5": 50
+    }
+    return dice
+
+print(score([5, 1, 3, 4, 1]))
