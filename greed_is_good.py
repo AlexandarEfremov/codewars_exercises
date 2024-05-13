@@ -1,5 +1,5 @@
 def score(dice):
-    score_key {
+    score_key = {
         "111": 1000,
         "666": 600,
         "555": 500,
@@ -10,5 +10,6 @@ def score(dice):
         "5": 50
     }
     return dice
+
 
 print(score([5, 1, 3, 4, 1]))
