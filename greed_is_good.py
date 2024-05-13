@@ -6,9 +6,13 @@ def score(dice):
         "444": 400,
         "333": 300,
         "222": 200,
-        "1": 100,
-        "5": 50
     }
+
+    single_score_dict = {
+        "1": 100,
+        "5": 50,
+    }
+
     total_amount = 0
     dice_list = sorted(map(str, dice))
     dice_str = "".join(dice_list)
@@ -24,7 +28,7 @@ def score(dice):
                 dice_list.remove(triplet[0])
             break
 
-    for key, value in score_key.items():
+    for key, value in single_score_dict.items():
         for el in dice_list:
             if key == el:
                 total_amount += value
@@ -32,4 +36,4 @@ def score(dice):
     return total_amount
 
 
-print(score([4, 4, 4, 3, 3]))
+print(score([2, 4, 4, 5, 4]))
