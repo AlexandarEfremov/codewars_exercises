@@ -9,7 +9,18 @@ def score(dice):
         "1": 100,
         "5": 50
     }
-    return dice
+    total_amount = 0
+    dice_str = ''.join(sorted(map(str, dice)))
+
+    for digi in dice_str:
+        if digi != "2" or digi != "3" or digi != "4" or digi != "6":
+            for key, value in score_key.items():
+                if digi == key:
+                    total_amount += value
+                    digi.remove(key)
+
+
+    return total_amount
 
 
 print(score([5, 1, 3, 4, 1]))
