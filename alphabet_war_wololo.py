@@ -14,14 +14,25 @@ def alphabet_war(fight):
         "z": 1,
         "j": 0,
     }
-    str_len = len(fight)
-    if str_len == 1:
-        if fight in left:
-            return "Left side wins!"
-        elif fight in right:
-            return "Right side wins!"
+
+    def conversion(wolo, position, string):
+        one_pos_forward = string[position + 1]
+        two_pos_forward = string[position + 2]
+        one_pos_backwards = string[position - 1]
+        two_pos_backwards = string[position - 2]
+
+        if wolo == "t":
+            if wolo[position - 1]:
+                if wolo[position - 2]:
+                    if wo
+
+    wololos = [{wolo: index} for index, wolo in enumerate(fight) if wolo in "tj"]
+    if wololos:
+        for i in wololos:
+            for wolo, pos in i.items():
 
     return "Let's fight again!"
+
 
 
 print(alphabet_war("z"))
