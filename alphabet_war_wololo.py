@@ -1,4 +1,6 @@
 def alphabet_war(fight):
+    string_as_list = [x for x in fight]
+
     left = {
         "w": 4,
         "p": 3,
@@ -15,21 +17,19 @@ def alphabet_war(fight):
         "j": 0,
     }
 
-    def conversion(wolo, position, string):
-        one_pos_forward = string[position + 1]
-        two_pos_forward = string[position + 2]
-        one_pos_backwards = string[position - 1]
-        two_pos_backwards = string[position - 2]
+    opposites = {
+        "w": "m",
+        "p": "q",
+        "b": "d",
+        "s": "z",
+        "z": "s",
+        "d": "b",
+        "q": "p",
+        "m": "w",
+    }
+    for letter in string_as_list:
+        if letter == "j" or letter == "t":
 
-        if wolo == "t":
-            if wolo[position - 1]:
-                if wolo[position - 2]:
-                    if wo
-
-    wololos = [{wolo: index} for index, wolo in enumerate(fight) if wolo in "tj"]
-    if wololos:
-        for i in wololos:
-            for wolo, pos in i.items():
 
     return "Let's fight again!"
 
