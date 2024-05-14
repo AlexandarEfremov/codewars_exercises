@@ -15,6 +15,11 @@ def alphabet_war(fight):
         "j": 0,
     }
     str_len = len(fight)
+    if str_len == 1:
+        if fight in left:
+            return "Left side wins!"
+        elif fight in right:
+            return "Right side wins!"
 
     return "Let's fight again!"
 
