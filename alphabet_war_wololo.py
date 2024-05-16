@@ -12,4 +12,7 @@ def alphabet_war(fight):
     return ["Right side wins!", "Left side wins!"][initial_score > 0] if initial_score else "Let's fight again!"
 
 
-print(alphabet_war("z"))
+print(alphabet_war("wololooooo"))
+
+#assisted solution
+#NOTE Python treats True as 1 and False as 0 in arithmetic operations., which helps in slicing the return statement
