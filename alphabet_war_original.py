@@ -10,6 +10,7 @@ def alphabet_war(fight):
                    "d": -2,
                    "z": -1
                    }
+
     for letter in fight:
         initial_score += alpha_dict.get(letter, 0)
 
