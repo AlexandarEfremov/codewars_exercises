@@ -15,3 +15,6 @@ def alphabet_war(fight):
         initial_score += alpha_dict.get(letter, 0)
 
     return ["Right side wins!", "Left side wins!"][initial_score > 0] if initial_score else "Let's fight again!"
+
+
+print(alphabet_war("wwwwwwz"))
