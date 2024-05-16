@@ -1,21 +1,15 @@
 def alphabet_war(fight):
     conversion_dict = {'j': {'w': 'm', 'p': 'q', 'b': 'd', 's': 'z'}, 't': {'m': 'w', 'q': 'p', 'd': 'b', 'z': 's'}}
 
-    def return_opposite(char, position):
-        try:
-            two_positions_forward = string_as_list[position + 2]
-            if two_positions_forward != "t":
-                if string_as_list[index + 1]:
-                    new_char = opposites[string_as_list[position + 1]]
-        except IndexError:
-            pass
+    initial_score = 0
 
-    for index, letter in enumerate(string_as_list):
+    for left, center, right in zip(" " + fight, fight, fight[1:] + " "):
+        if left + right not in 'tjt':
+            center = conversion_dict.get(left, {}).get(center, center)
+            center = conversion_dict.get(right, {}).get(center, center)
+        initial_score += {'w': 4, 'p': 3, 'b': 2, 's': 1, 'm': -4, 'q': -3, 'd': -2, 'z': -1}.get(center, 0)
 
-
-
-    return "Let's fight again!"
-
+    return ["Right side wins!", "Left side wins!"][initial_score > 0] if initial_score else "Let's fight again!"
 
 
 print(alphabet_war("z"))
